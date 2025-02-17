@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by anonymous (http://jsbin.com/dawopayexe/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+let jugar_de_nuevo = true;
+
+// noprotect
+while(jugar_de_nuevo===true){
+  
+  let numero_pc = Math.floor((Math.random() * 9) + 1);
+  let numero_es_valido = false;
+  let respuesta_usuario = 0;
+  // Mientras que el número no sea válido, pedimos al usuario que ingrese un número
+  // noprotect
+  while (numero_es_valido === false) {
+    respuesta_usuario = prompt("Ingrese un numero entre 3 y 6");
+
+    // Convertimos la respuesta del usuario a un número para poder compararlo
+    respuesta_usuario = Number(respuesta_usuario);
+
+    // Verificamos si el número es válido
+    if (respuesta_usuario >= 3 && respuesta_usuario <= 6) {
+      numero_es_valido = true; // Cambiamos la variable a true para salir del bucle
+    } else {
+      alert("Tu numero no esta dentro de los parametros validos");
+    }
+  
+  }
+   //Preguntar adivine si el número que él ingresó es mayor,menor o igual al número que la computadora generó.
+       let adivina = prompt("¿Su número que ingreso es mayor,menor o igual al número que la computadora generó? ");
+  if(adivina == "mayor"){
+     if(respuesta_usuario > numero_pc){
+      alert("Haz adivinado "+"La computadora eligio "+numero_pc + " Usted eligio "+respuesta_usuario)
+     }else{
+      alert("No haz adivinado "+"La computadora eligio "+numero_pc + " Usted eligio "+respuesta_usuario);
+     }
+   }else if(adivina == "menor"){
+     if (respuesta_usuario < numero_pc){
+      alert("Haz adivinado "+"La computadora eligio "+numero_pc + " Usted eligio "+respuesta_usuario);
+     }else{
+       alert("No haz adivinado "+"La computadora eligio "+numero_pc + " Usted eligio "+respuesta_usuario);
+     }
+   }else if (adivina =="igual"){
+    if (respuesta_usuario == numero_pc){
+     alert("Haz adivinado "+"La computadora eligio "+numero_pc + " Usted eligio "+respuesta_usuario);
+    }else{
+     alert("No haz adivinado "+"La computadora eligio "+numero_pc + " Usted eligio "+respuesta_usuario);
+    }
+}
+  
+ //Preguntar al jugador si quiere volver a jugar
+  let volver_a_jugar = prompt("Quieres volver a jugar? SI/ NO")
+  if(volver_a_jugar==="NO"){
+    jugar_de_nuevo=false;
+  }
+}
+
+//Mensaje de despedida
+alert("GRACIAS POR JUGAR! \n YULI AZUCENA CALLEJAS BARRIENTOS, CARNET 25003031")
+
+
+
+</script>
+</body>
+</html>
